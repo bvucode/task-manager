@@ -4,8 +4,8 @@ fn main() {
     println!("\ntask manager\ntop tasks is most important and urgent\n add - text and enter \n show - show task \n take - take task \n exit - exit \n");
     loop {
         let mut line = String::new();
-        println!("> ");
-        let t1 = stdin().read_line(&mut line).unwrap();
+        println!(">>> ");
+        stdin().read_line(&mut line).unwrap();
         if line == "show\n" {
             println!("\nto do:");
             for (x, i) in v.iter().enumerate() {
@@ -14,7 +14,7 @@ fn main() {
         }
         else if line == "take\n" {
             println!("{:?} is done.", v[0]);
-            v.pop();
+            v.remove(0);
         }
         else if line == "exit\n" {
             break;
